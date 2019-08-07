@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Marcelo
  */
 @RestController
-@RequestMapping("/guest")
+@RequestMapping("/api/v1/guest")
 @CrossOrigin(origins="*")
 public class GuestController {
     
