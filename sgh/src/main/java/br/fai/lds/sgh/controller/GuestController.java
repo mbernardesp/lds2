@@ -28,11 +28,21 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins="*")
 public class GuestController {
     
+    /**
+     * Create guest
+     * 
+     * @return ResponseEntity
+     */
     @PostMapping
     public ResponseEntity create(){
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    /**
+     * Read guest by id
+     * 
+     * @return ResponseEntity
+     */
     @GetMapping("/read/{id}")
     public ResponseEntity readById(@PathVariable("id") Long id){
         
@@ -41,6 +51,11 @@ public class GuestController {
         return ResponseEntity.ok(guest);
     }
     
+    /**
+     * Read all guests
+     * 
+     * @return ResponseEntity
+     */
     @GetMapping("/read")
     public ResponseEntity<List<Guest>> readAll(){
 
@@ -54,6 +69,12 @@ public class GuestController {
         return ResponseEntity.ok(guestList);
     }
     
+    /**
+     * Update guest by id
+     * 
+     * @param id Identifier of the guest
+     * @return ResponseEntity
+     */
     @PutMapping("/update/{id}")
     public ResponseEntity update(@PathVariable("id") Long id){
         
@@ -61,7 +82,13 @@ public class GuestController {
         
         return ResponseEntity.status(200).build();
     }
-    
+
+    /**
+     * Delete guest by id
+     * 
+     * @param id Identifier of the guest
+     * @return ResponseEntity
+     */
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id){
         
