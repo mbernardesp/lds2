@@ -21,7 +21,7 @@ INSERT INTO room_product(id_room, id_product, amount) VALUES (1, 2, 3);
 ---------------------------------------------------------
 
 SELECT * FROM guest WHERE id_room = 1;
-SELECT * FROM room WHERE id_room = 1;
+SELECT * FROM room WHERE id = 1;
 SELECT * FROM guest INNER JOIN room on guest.id_room = room.id WHERE num LIKE '60%';
 
 ---------------------------------------------------------
