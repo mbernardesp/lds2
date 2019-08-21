@@ -28,40 +28,7 @@ public class Main {
         //Lista criada para receber o resultado da pesquisa do banco
         List<Guest> guestList = new ArrayList<>();
 
-        Connection conn = null;
-
-        try {
-            //Cria a conexão com o banco de dados
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sgh", "postgres", "postgres");
-
-            //Prepara a sql para ser executada
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM guest");
-
-            //Executa a sql(neste caso uma consulta) e retorna o resultado para o ResultSet
-            ResultSet rs = stmt.executeQuery();
-
-            //Itera a lista que veio do banco, criando um objeto por linha retornada, setando cada atributo correspondente a entidade Guest
-            while (rs.next()) {
-
-                Guest guest = new Guest();
-                guest.setId(rs.getLong("id"));
-                guest.setIdRoom(rs.getLong("id_room"));
-                guest.setName(rs.getString("_name"));
-                guest.setAge(rs.getInt("age"));
-                guest.setCpf(rs.getString("cpf"));
-                guest.setPhone(rs.getString("phone"));
-
-                guestList.add(guest);
-            }
-
-            //Print da lista retornada do banco!
-            for (Guest guest : guestList) {
-                System.out.println(guest);
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+        //Aqui vamos testar nossas classes DAO, aguardem..
     }
 
 }
