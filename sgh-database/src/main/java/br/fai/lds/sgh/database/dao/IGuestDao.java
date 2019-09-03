@@ -18,12 +18,11 @@ public interface IGuestDao {
     
     public List<Guest> readAll();
     
-    public Guest readById(long id);
-    
+    public List<Guest> readByName(String name);
+
+    public Guest readById(Long id);
+
     public void update(Guest guest);
-    
-    public void delete(Guest guest);
-    
-    public void closeConnection();
-    
+
+    public void delete(Long id);
 }

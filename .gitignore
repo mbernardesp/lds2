@@ -1,2 +1,5 @@
 /sgh/target/
 /sgh-database-jdbc/target/
+/sgh-database-dao/target/
+/sgh-api/target/
+/sgh-database/target/
