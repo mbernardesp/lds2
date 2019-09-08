@@ -107,7 +107,7 @@ public class RoomController {
      * @param num
      * @return ResponseEntity
      */
-    @GetMapping("/read/{num}")
+    @GetMapping("/read/search/{num}")
     public ResponseEntity readByName(@PathVariable("num") String num) {
 
         List<Room> roomList = roomDao.readByNum(num);

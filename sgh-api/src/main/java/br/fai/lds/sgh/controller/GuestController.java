@@ -107,7 +107,7 @@ public class GuestController {
      * @param name
      * @return ResponseEntity
      */
-    @GetMapping("/read/{name}")
+    @GetMapping("/read/search/{name}")
     public ResponseEntity readByName(@PathVariable("name") String name) {
 
         List<Guest> guestList = guestDao.readByName(name);

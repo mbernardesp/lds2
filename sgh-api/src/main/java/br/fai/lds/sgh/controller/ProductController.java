@@ -107,7 +107,7 @@ public class ProductController {
      * @param name
      * @return ResponseEntity
      */
-    @GetMapping("/read/{name}")
+    @GetMapping("/read/search/{name}")
     public ResponseEntity readByName(@PathVariable("name") String name) {
 
         List<Product> productList = productDao.readByName(name);
