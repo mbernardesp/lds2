@@ -79,7 +79,7 @@ public class ProductDao implements IProductDao {
         try {
             conn = ConnectionFactory.getConnection();
 
-            stmt = conn.prepareStatement("SELECT * from product");
+            stmt = conn.prepareStatement("SELECT * FROM product");
 
             rs = stmt.executeQuery();
 

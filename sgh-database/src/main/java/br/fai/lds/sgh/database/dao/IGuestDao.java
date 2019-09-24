@@ -17,7 +17,7 @@ public interface IGuestDao {
     public void create(Guest guest);
     
     public List<Guest> readAll();
-    
+
     public List<Guest> readByName(String name);
 
     public Guest readById(Long id);

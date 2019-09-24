@@ -5,25 +5,24 @@
  */
 package br.fai.lds.sgh.client.controller;
 
+import br.fai.lds.sgh.client.pojo.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  *
- * @author Marcelo
+ * @author marcelo
  */
 @Controller
 public class MainController {
-    
+
     @GetMapping("/")
-    public String index(Model model){
-        
-        String msg = "SGH - Sistema gerenciador hoteleiro";
-        
-        model.addAttribute(msg);
-        
-        return "index";
+    public String auth(Model model) {
+
+        model.addAttribute("login", new Login());
+
+        return "login/login";
     }
-    
+
 }

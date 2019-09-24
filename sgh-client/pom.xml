@@ -39,6 +39,12 @@
             <artifactId>jstl</artifactId>
         </dependency>
                   
+        <!--Database-->
+        <dependency>
+            <groupId>br.fai.lds</groupId>
+            <artifactId>sgh-database</artifactId>
+            <version>1.0.0</version>          
+        </dependency>
                             
     </dependencies>
     

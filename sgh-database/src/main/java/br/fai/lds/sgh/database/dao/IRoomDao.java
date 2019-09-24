@@ -18,12 +18,12 @@ public interface IRoomDao {
     
     public List<Room> readAll();
     
-    public List<Room> readByNum(String name);
+    public List<Room> readByNum(String num);
 
-    public Room readById(long id);
+    public Room readById(Long id);
 
     public void update(Room room);
 
-    public void delete(long id);
+    public void delete(Long id);
     
 }

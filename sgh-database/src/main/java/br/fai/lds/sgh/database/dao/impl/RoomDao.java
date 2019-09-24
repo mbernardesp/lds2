@@ -84,7 +84,7 @@ public class RoomDao implements IRoomDao {
         try {
             conn = ConnectionFactory.getConnection();
 
-            stmt = conn.prepareStatement("SELECT * from room");
+            stmt = conn.prepareStatement("SELECT * FROM room");
 
             rs = stmt.executeQuery();
 
@@ -130,7 +130,7 @@ public class RoomDao implements IRoomDao {
     }
 
     @Override
-    public Room readById(long id) {
+    public Room readById(Long id) {
 
         Room room = null;
 
@@ -233,7 +233,7 @@ public class RoomDao implements IRoomDao {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -274,7 +274,7 @@ public class RoomDao implements IRoomDao {
     }
 
     @Override
-    public List<Room> readByNum(String name) {
+    public List<Room> readByNum(String num) {
 
         List<Room> roomList = new ArrayList<>();
 
@@ -285,10 +285,10 @@ public class RoomDao implements IRoomDao {
         try {
             conn = ConnectionFactory.getConnection();
 
-            if (name != null && !name.isEmpty()) {
+            if (num != null && !num.isEmpty()) {
 
                 stmt = conn.prepareStatement("SELECT * FROM room WHERE num LIKE ?");
-                stmt.setString(1, '%' + name + '%');
+                stmt.setString(1, '%' + num + '%');
             } else {
 
                 stmt = conn.prepareStatement("SELECT * FROM room");
