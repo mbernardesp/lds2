@@ -5,7 +5,11 @@
  */
 package br.fai.lds.sgh.client.controller.guest;
 
+import br.fai.lds.sgh.client.pojo.Search;
 import br.fai.lds.sgh.database.dao.IGuestDao;
+import br.fai.lds.sgh.database.entity.Guest;
+import java.util.Collections;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +31,10 @@ public class GuestListController {
     @GetMapping("guest/list")
     public String getListSearch(@ModelAttribute("search") Search search, Model model) {
 
+        List<Guest> guestList = guestDao.readAll();
+
+        model.addAttribute("guestList", guestList != null ? guestList : Collections.EMPTY_LIST);
+        model.addAttribute("search", search);
 
         return "guest/list";
     }
@@ -34,6 +42,10 @@ public class GuestListController {
     @PostMapping("guest/list")
     public String search(@ModelAttribute("search") Search search, Model model) {
 
+        List<Guest> guestList = guestDao.readByName(search.getContent());
+
+        model.addAttribute("guestList", guestList != null ? guestList : Collections.EMPTY_LIST);
+        model.addAttribute("search", search);
 
         return "guest/list";
     }
@@ -41,6 +53,9 @@ public class GuestListController {
     @GetMapping("/guest/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
 
+        Guest guest = guestDao.readById(id);
+  
+        model.addAttribute("guest", guest);
 
         return "guest/edit";
     }
@@ -48,6 +63,7 @@ public class GuestListController {
     @GetMapping("/guest/delete/{id}")
     public String delete(@PathVariable("id") Long id, Model model) {
 
+        guestDao.delete(id);
 
         return "redirect:/guest/list";
     }

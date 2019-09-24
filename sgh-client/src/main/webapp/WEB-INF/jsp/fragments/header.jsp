@@ -11,16 +11,17 @@
         <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     </head>
     <body>
+
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                
+
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">SGH</a>
                 </div>
 
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="${pageContext.request.contextPath}">Dashboard</a></li>
-                    
+                    <li class="active"><a href="${pageContext.request.contextPath}/dashboard">Dashboard</a></li>
+
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Guest<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="${pageContext.request.contextPath}/guest/list">List</a></li>
@@ -43,6 +44,13 @@
                     </li>
                     <li><a href="#">Check-In</a></li>
                     <li><a href="#">Check-Out</a></li>
+
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${pageContext.request.contextPath}/service/address">Find address</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
 
             </div>
