@@ -9,7 +9,7 @@ package br.fai.lds.sgh.client.service;
  *
  * @author marcelo
  */
-public class GuestService {
+public class CepService {
     
     //Consumir uma api qualquer remotamente
     
