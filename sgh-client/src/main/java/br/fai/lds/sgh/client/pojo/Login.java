@@ -11,6 +11,7 @@ package br.fai.lds.sgh.client.pojo;
  */
 public class Login {
     
+    private Long id;
     private String user;
     private String pass;
     private String msg = "";
@@ -18,10 +19,18 @@ public class Login {
     public Login() {
     }
 
-    public Login(String user, String pass, String msg) {
+    public Login(Long id, String user, String pass) {
+        this.id = id;
         this.user = user;
         this.pass = pass;
-        this.msg = msg;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUser() {
@@ -50,6 +59,7 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" + "user=" + user + ", pass=" + pass + ", msg=" + msg + '}';
+        return "Login{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", msg=" + msg + '}';
     }
+
 }

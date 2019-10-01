@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -52,6 +54,8 @@
                     </li>
 
                 </ul>
+
+                <span class="navbar-text" style="color:#bfff00;"> | Bem vindo! <c:out value='${sessionScope.id}'/> [<c:out value='${sessionScope.user}'/>]</span>
 
             </div>
         </nav>  

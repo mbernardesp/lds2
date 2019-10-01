@@ -6,6 +6,7 @@
 package br.fai.lds.sgh.client.validator;
 
 import br.fai.lds.sgh.client.pojo.Login;
+import br.fai.lds.sgh.client.service.UserService;
 import br.fai.lds.sgh.database.dao.IUserDao;
 import br.fai.lds.sgh.database.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class LoginFormValidator implements Validator {
 
     @Autowired
     IUserDao userDao;
+    
+    @Autowired
+    UserService userService;
     
     @Override
     public boolean supports(Class<?> type) {
@@ -45,12 +49,19 @@ public class LoginFormValidator implements Validator {
 
         } else {
             
-            user = userDao.readByUserNameAndPass(login.getUser(), login.getPass());
+            //Local authentication
+            //user = userDao.readByUserNameAndPass(login.getUser(), login.getPass());
+            
+            //Remote authentication
+            user = userService.verifyRemoteUser(login.getUser(), login.getPass());
 
             if (user == null) {
 
                 errors.rejectValue("msg", "");
-            }
+            }else{
+                
+                login.setId(user.getId());                
+            }           
         }
     }
 }

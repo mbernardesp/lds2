@@ -17,7 +17,7 @@
                     <div class="input-group h2">
                         <form:input path="content" type="text" class="form-control" id="content" placeholder="Zip code" />
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit" id="load" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Load ">Find address
+                            <button class="btn btn-warning" type="submit" id="load" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Load ">Find address
                                 <!--span class="glyphicon glyphicon-search"></span-->
                             </button>
                         </span>
