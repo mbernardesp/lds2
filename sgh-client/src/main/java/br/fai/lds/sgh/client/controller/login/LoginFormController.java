@@ -49,9 +49,8 @@ public class LoginFormController {
             session.setAttribute("id", login.getId());
             session.setAttribute("user", login.getUser());
             
-            model.addAttribute("msg", "SGH Dashboard");
-            
-            return "dashboard";
+            return "redirect:/dashboard/list";
+
         }
     }
 

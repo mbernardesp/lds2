@@ -7,13 +7,14 @@ package br.fai.lds.sgh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
  *
  * @author marcelo
  */
 @SpringBootApplication
-public class Application {
+public class Application extends SpringBootServletInitializer {
 
     /**
      * @param args the command line arguments
