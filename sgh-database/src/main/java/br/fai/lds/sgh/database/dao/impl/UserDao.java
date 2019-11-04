@@ -30,7 +30,7 @@ public class UserDao implements IUserDao {
         Connection conn = null;
         PreparedStatement stmt = null;
 
-        String sql = "INSERT INTO users(id, _user, pass, _name, email, _level) VALUES (nextval('users_id_seq'), ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO users(id, _user, pass, _name, email, _level, img) VALUES (nextval('users_id_seq'), ?, ?, ?, ?, ?, ?)";
 
         try {
             conn = ConnectionFactory.getConnection();
@@ -42,6 +42,7 @@ public class UserDao implements IUserDao {
             stmt.setString(3, user.getName().toUpperCase());
             stmt.setString(4, user.getEmail().toLowerCase());
             stmt.setString(5, user.getLevel().get());
+            stmt.setString(6, user.getImg());
 
             stmt.execute();
 
@@ -97,6 +98,8 @@ public class UserDao implements IUserDao {
                 user.setName(rs.getString("_name"));
                 user.setEmail(rs.getString("email"));
                 user.setLevel(ELevel.valueOf(rs.getString("_level")));
+                user.setImg(rs.getString("img"));
+                
 
                 userList.add(user);
             }
@@ -154,6 +157,7 @@ public class UserDao implements IUserDao {
                 user.setName(rs.getString("_name"));
                 user.setEmail(rs.getString("email"));
                 user.setLevel(ELevel.valueOf(rs.getString("_level")));
+                user.setImg(rs.getString("img"));
             }
 
         } catch (SQLException ex) {
@@ -210,6 +214,7 @@ public class UserDao implements IUserDao {
                 user.setName(rs.getString("_name"));
                 user.setEmail(rs.getString("email"));
                 user.setLevel(ELevel.valueOf(rs.getString("_level")));
+                user.setImg(rs.getString("img"));
             }
 
         } catch (SQLException ex) {
@@ -247,7 +252,7 @@ public class UserDao implements IUserDao {
         Connection conn = null;
         PreparedStatement stmt = null;
 
-        String sql = "UPDATE users SET _user = ?, pass = ?, _name = ?, email = ?, _level = ? WHERE id ?";
+        String sql = "UPDATE users SET _user = ?, pass = ?, _name = ?, email = ?, _level = ?, img = ? WHERE id = ?";
 
         try {
             conn = ConnectionFactory.getConnection();
@@ -260,11 +265,15 @@ public class UserDao implements IUserDao {
             stmt.setString(3, user.getName().toUpperCase());
             stmt.setString(4, user.getEmail().toLowerCase());
             stmt.setString(5, user.getLevel().get());
-            stmt.setLong(6, user.getId());
 
+            stmt.setString(6, user.getImg());
+
+            stmt.setLong(7, user.getId());
             stmt.execute();
             conn.commit();
         } catch (SQLException e) {
+            
+            e.printStackTrace();
 
             try {
                 conn.rollback();
@@ -363,7 +372,8 @@ public class UserDao implements IUserDao {
                 user.setName(rs.getString("_name"));
                 user.setEmail(rs.getString("email"));
                 user.setLevel(ELevel.valueOf(rs.getString("_level")));
-
+                user.setImg(rs.getString("img"));
+                
                 userList.add(user);
             }
 
@@ -424,6 +434,8 @@ public class UserDao implements IUserDao {
                 user.setName(rs.getString("_name"));
                 user.setEmail(rs.getString("email"));
                 user.setLevel(ELevel.valueOf(rs.getString("_level")));
+                user.setImg(rs.getString("img"));
+
             }
 
         } catch (SQLException ex) {
