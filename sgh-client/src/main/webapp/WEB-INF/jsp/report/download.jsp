@@ -1,21 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-    <head>
-        <title>SGH</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login.css" rel="stylesheet">
-        <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-    </head>
+<jsp:include page="../fragments/header.jsp"/>
 
-    <body class="text-center">
-        <div class="container">
-
-            User not logged in. Click <a href="${pageContext.request.contextPath}">here</a> to login!
-
-        </div> 
-    </body>
-</html>
+<div class="container">
+    <h1>Report download</h1>
+</div>
+    
+<jsp:include page="../fragments/footer.jsp"/>
