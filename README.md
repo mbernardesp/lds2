@@ -1,2 +1,1 @@
-# lds2
-Repositório para aulas do laboratório de desenvolvimento de software II
+# Projeto de exemplo de um sistema gerenciador de hotéis básico
